@@ -319,6 +319,10 @@ img {
 
 /* Pages */
 
+.section {
+    padding-bottom: 13em;
+}
+
 .container {
     width: 100%;
     margin: auto;
@@ -360,12 +364,9 @@ img {
 }
 
 .intro {
-    height: 100vh;
+    height: calc(100vh - 4em - 92px);
     background: url('bg-2.png') 100% 50% no-repeat;
     background-size: contain;
-    display: flex;
-    justify-self: center;
-    align-items: center;
 }
 
 .intro__wrapper {
@@ -386,11 +387,354 @@ img {
     display: inline-block;
 }
 
+.numbers {
+    text-align: center;
+}
+
+.numbers__wrapper {
+    display: flex;
+    padding: 0 1.6em;
+}
+
+.numbers__item {
+    flex: 1 1 0;
+    text-align: center;
+    position: relative;
+    padding: 3px 0;
+}
+
+.numbers__item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--yellow);
+}
+
+.numbers__item:last-child::after {
+    display: none;
+}
+
+.numbers__value {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--gray);
+    padding-bottom: 0.35em;
+}
+
+.numbers__description {
+    font-size: 1.2rem;
+}
+
+.numbers__container {
+    padding-bottom: 3em;
+}
+
+.numbers__button {
+    display: inline-block;
+}
+
+.why__title {
+    text-align: center;
+    padding-bottom: 1.1em;
+}
+
+.why__wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.why__item {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0 60px;
+}
+
+.why__icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 26px;
+}
+
+.why__subtitle {
+    font-size: 2rem;
+    padding-bottom: 8px;
+}
+
+.chains {
+    background: url("./bg-3.png") 100% 50% no-repeat;
+    background-size: contain;
+}
+
+.chains__title {
+    text-align: center;
+    padding-bottom: 1.1em;
+}
+
+.chains__wrapper {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+}
+
+.chains__item {
+    width: 180px;
+    height: 192px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 6px #62def9;
+    border-radius: 8px;
+    background: #1A1B23;
+}
+
+.chains__icon {
+    width: 80px;
+    height: 80px;
+}
+
+.chains__icon>img {
+    width: 100%;
+    height: 100%;
+}
+
+.chains__name {
+    padding-top: 10px;
+    font-size: 0.8rem;
+}
+
+.staking {
+
+}
+
+.staking__title {
+    text-align: center;
+    padding-bottom: 1.1em;
+}
+
+.staking__subtitle {
+    text-align: center;
+}
+
+.staking__tree {
+    margin-top: 36px;
+    height: 200px;
+}
+
+.footer {
+
+}
+
+.footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 0;
+    align-items: center;
+}
+
+.footer__logo {
+    width: 56px;
+    height: 56px;
+}
+
+.footer__menu {
+    list-style: none;
+    display: flex;
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+.footer__menu-item {
+    padding: 0 8px;
+}
+
+.footer__menu-link {
+    padding: 5px 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+.footer__follow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer__follow-link {
+    padding: 10px;
+    background: var(--dark-gray);
+    border-radius: 20px;
+    transition: all 0.2s linear;
+}
+
+.footer__follow-link:hover {
+    background: #000000;
+}
+
+.footer__follow-image {
+    width: 20px;
+    height: 20px;
+}
+
+.ticker--active{
+    background: var(--gradient);
+    animation: refresh 25s linear forwards;
+}
+
+.modal__wrapper {
+
+}
+
+.modal {
+
+}
+
+.modal__search {
+    padding-bottom: 15px;
+}
+
+.modal__default-tokens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-bottom: 7px;
+}
+
+.modal__default-token {
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #5a6a81;
+    border-radius: 4px;
+    padding: 4px 8px;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.modal__default-token:hover {
+    border-color: var(--dark-green-hover);
+}
+
+.modal__default-token-image {
+    width: 18px;
+    height: 18px;
+}
+
+.modal__tokens {
+    height: calc(100vh - 700px);
+    max-height: calc(100vh - 150px);
+    overflow: scroll;
+    color: var(--gray);
+}
+
+.modal__token {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 6px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.modal__token:hover {
+    border-color: var(--dark-green);
+    background-color: var(--black);
+}
+
+.modal__token-logo {
+    width: 40px;
+    height: 40px;
+    flex-grow: 0;
+}
+
+.modal__token-description {
+    flex-grow: 1;
+}
+
+.modal__token-name {
+    color: #ffffff;
+}
+
+.modal__token-address {
+    font-size: 0.9rem;
+}
+
+.modal__token-balance {
+    flex-grow: 0;
+    width: 100px;
+    text-align: left;
+    font-size: 0.8rem;
+}
+
+.modal__subtitle {
+    color: var(--gray);
+    padding-bottom: 6px;
+    font-size: 1rem;
+}
+
+.modal__wallet {
+    padding: 6px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    background-color: var(--dark-gray);
+}
+
+.modal__wallet:hover {
+    border-color: var(--dark-green);
+    background-color: var(--black);
+}
+
+.modal__wallet-logo {
+    height: 50px;
+    width: 100%;
+}
+
+
+.modal__title,
+.modal__wrapper .ant-modal-title {
+    font-size: 1.5rem;
+    color: var(--dark-green);
+    font-weight: 500;
+}
+
+.modal__wrapper .ant-modal-header {
+    background: none;
+    margin-bottom: 12px;
+}
+
+.modal__wrapper .ant-modal-content {
+    background: var(--dark-gray);
+}
+
+.modal__wrapper .ant-modal-close {
+    color: var(--dark-green);
+    top: 21px;
+}
+
+/* Modifiers */
+
 .text--gradient {
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.beta {
+    content: 'beta';
+    color: yellow;
+    padding: 0 2px;
 }
 
 @media screen and (max-width: 1199px) {
@@ -410,6 +754,31 @@ img {
 
     .intro__wrapper{
         padding: 5em 1em;
+    }
+
+    .numbers__item {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .roadmap__subtitle {
+        padding-left: 5em;
+        padding-right: 5em;
+    }
+
+    .faq::before {
+        top: 250px;
+        width: 300px;
+        height: 741px;
+    }
+
+    .faq__item {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .why__item {
+        padding: 0 16px;
     }
 }
 
@@ -453,5 +822,131 @@ img {
 
     .intro__subtitle {
         font-size: 1.1rem;
+    }
+
+    .numbers__wrapper {
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    .numbers__item {
+        width: 160px;
+        padding-bottom: 26px;
+        flex: 0 0 50%;
+    }
+
+    .numbers__item::after {
+        display: none;
+    }
+
+    .howto__wrapper {
+        flex-direction: column;
+    }
+
+    .howto__image {
+        width: 100%;
+        max-width: 360px;
+        margin-bottom: 30px;
+    }
+
+    .howto__description {
+        width: 100%;
+    }
+
+    .howto__title {
+        text-align: center;
+    }
+
+    .roadmap__subtitle {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .roadmap__list {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .roadmap__list .roadmap__item{
+        order: 1;
+        margin-left: 0;
+    }
+
+    .roadmap__item::before,
+    .roadmap__item::after {
+        display: none;
+    }
+
+    .faq__item {
+        padding: 16px;
+    }
+
+    .faq__question {
+        font-size: 1.2em;
+    }
+
+    .ready__wrapper {
+        flex-direction: column;
+    }
+
+    .ready__image {
+        width: 100%;
+        max-width: 360px;
+        padding-bottom: 30px;
+    }
+
+    .ready__description {
+        width: 100%;
+    }
+
+    .ready__title {
+        text-align: center;
+    }
+
+    .ready__text {
+        text-align: center;
+    }
+
+    .ready__text p {
+        text-align: left;
+    }
+
+    .why__wrapper {
+        flex-direction: column;
+        gap: 36px;
+    }
+
+    .chains__wrapper {
+        flex-wrap: wrap;
+    }
+
+    .chains__item {
+        width: 110px;
+        height: 120px;
+    }
+
+    .chains__icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .footer__wrapper {
+        padding: 1em 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .footer__follow {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .footer__follow-title {
+        display: none;
+    }
+
+    .footer__menu {
+        padding-left: 0;
     }
 }
